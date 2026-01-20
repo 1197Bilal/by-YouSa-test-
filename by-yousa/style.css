@@ -1,0 +1,529 @@
+/* 
+   by YouSa - Premium Hijabi Fashion
+   Inspired by SKLUM & Cataleya Aesthetics 
+*/
+
+:root {
+    /* Palette: Earthy, Warm, Premium */
+    --color-primary: #1a1a1a;
+    /* Deep Black/Charcoal */
+    --color-secondary: #8c7b6c;
+    /* Warm Taupe/Brown */
+    --color-accent: #d4af37;
+    /* Muted Gold */
+    --color-bg-body: #f9f8f6;
+    /* Soft Creme/Off-white */
+    --color-bg-card: #ffffff;
+    --color-text-main: #2b2b2b;
+    --color-text-light: #666666;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    /* Elegant, premium */
+    --font-body: 'Inter', sans-serif;
+    /* Clean, modern */
+
+    /* Spacing & Layout */
+    --container-width: 1440px;
+    --header-height: 80px;
+    --sp-sm: 0.5rem;
+    --sp-md: 1rem;
+    --sp-lg: 2rem;
+    --sp-xl: 4rem;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg-body);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Typography Utilities */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.text-display {
+    font-size: 3.5rem;
+}
+
+.text-h1 {
+    font-size: 2.5rem;
+}
+
+.text-h2 {
+    font-size: 2rem;
+}
+
+.text-h3 {
+    font-size: 1.5rem;
+}
+
+.text-body {
+    font-size: 1rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+/* Utility Classes */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--sp-md);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Header Styles */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-card);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.announcement-bar {
+    background-color: var(--color-primary);
+    color: #fff;
+    text-align: center;
+    padding: var(--sp-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.header-main {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* SKLUM Layout: Menu - Logo - Icons */
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 var(--sp-md);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--sp-md);
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle:hover {
+    color: var(--color-secondary);
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.icon-link:hover {
+    color: var(--color-secondary);
+}
+
+.badget {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    /* Full impact */
+    overflow: hidden;
+    margin-bottom: var(--sp-xl);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-view-box: inset(0 0 0 0);
+    /* Ensure cover fit */
+    object-fit: cover;
+    object-position: center 20%;
+    /* Adjust focus */
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    /* Subtle gradient for text readability */
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.hero-content {
+    color: #fff;
+    max-width: 500px;
+    animation: fadeInPage 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--sp-md);
+    opacity: 0.9;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-family: var(--font-heading);
+    line-height: 1;
+    margin-bottom: var(--sp-lg);
+}
+
+.hero-title span {
+    font-style: italic;
+    color: var(--color-accent);
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .header-main {
+        padding: 0 var(--sp-sm);
+    }
+}
+
+/* Categories Section */
+.categories-section {
+    padding: var(--sp-xl) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--sp-lg);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: var(--sp-sm);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 600px 600px;
+    gap: var(--sp-md);
+}
+
+.cat-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cat-card:nth-child(1) {
+    grid-row: span 2;
+}
+
+.cat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cat-card:hover .cat-img {
+    transform: scale(1.05);
+}
+
+.cat-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--sp-lg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cat-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--sp-sm);
+    font-weight: 500;
+}
+
+.cat-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .cat-card {
+        height: 400px;
+    }
+
+    .cat-card:nth-child(1) {
+        grid-row: span 1;
+    }
+}
+
+/* Product Showcase Section */
+.products-section {
+    padding: var(--sp-xl) 0;
+    overflow: hidden;
+    /* Hide scrollbar for section, but allow inner scroll */
+}
+
+.product-carousel {
+    display: flex;
+    gap: var(--sp-md);
+    overflow-x: auto;
+    padding-bottom: var(--sp-lg);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+}
+
+.product-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    flex: 0 0 300px;
+    /* Fixed width */
+    scroll-snap-align: start;
+    position: relative;
+    /* group-hover effect handled via parent selector if needed, but here we use direct children */
+}
+
+.product-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: var(--sp-sm);
+    background-color: #f0f0f0;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.03);
+}
+
+.add-to-cart-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover .add-to-cart-btn {
+    transform: translateY(0);
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        flex: 0 0 220px;
+    }
+}
+
+/* Product Badges (Urgency) */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 2;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.badge-hot {
+    background-color: #e53935;
+    /* Red */
+    box-shadow: 0 0 10px rgba(229, 57, 53, 0.5);
+    animation: pulse-red 2s infinite;
+}
+
+.badge-low {
+    background-color: #ff9800;
+    /* Orange */
+    color: #000;
+}
+
+.stock-indicator {
+    font-size: 0.75rem;
+    color: #e53935;
+    font-weight: 600;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+@keyframes pulse-red {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(229, 57, 53, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 6px rgba(229, 57, 53, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(229, 57, 53, 0);
+    }
+}
